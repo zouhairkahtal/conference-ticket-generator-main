@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Conference ticket generator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body style="font-family: 'Inconsolata', monospace">
+    <div
+      class="bg-red-500 w-full h-screen bg-[url('/assets/images/background-desktop.png')] bg-no-repeat bg-center bg-cover relative"
+    >
+      <div
+        class="bg-[url('/assets/images/pattern-lines.svg')] w-full h-[800px] bg-center"
+      ></div>
+      <div
+        class="bg-[url('/assets/images/pattern-squiggly-line-bottom-desktop.svg')] bg-no-repeat min-w-[800px] h-[400px] absolute bottom-0 left-0"
+      ></div>
+      <div
+        class="bg-[url('/assets/images/pattern-squiggly-line-top.svg')] bg-no-repeat min-w-[450px] h-[210px] absolute top-24 right-0"
+      ></div>
+      <div
+        class="bg-[url('/assets/images/pattern-circle.svg')] bg-no-repeat min-w-[450px] h-[210px] absolute bottom-[300px] right-[160px]"
+      ></div>
+      <div
+        class="absolute bg-red- left-0 top-0 w-full h-full flex justify-center"
+      >
+        <div class="w-full max-w-[1000px]">
+          <div class="w-full flex flex-col items-center">
+            <img
+              class="w-[250px] py-10"
+              src="assets/images/logo-full.svg"
+              alt="logo"
+            />
+            <h1
+              class="pb-4 text-white text-[50px] max-w-[700px] leading-[50px] font-[600] text-center"
+            >
+              Your Journey to Coding Conf 2025 Starts Here!
+            </h1>
+            <p class="text-xl text-[hsl(252,6%,83%)]">
+              Secure your spot at next year's biggest coding conference.
+            </p>
+          </div>
+          <div class="w-full mt-10 flex flex-col items-center">
+            <form>
+              <label class="text-white">Upload Avatar</label>
+              <div
+                id="uploadBox"
+                class="h-[130px] flex mt-2 justify-center items-center flex-col w-[450px] text-center border-[hsl(245,15%,58%)] border-[2px] border-dashed text-[hsl(252,6%,83%)] p-6 rounded-lg bg-[#8a84a448] hover:bg-[#8a84a463]"
+              >
+                <div
+                  class="p-2 border-[1px] border-[hsl(245,15%,58%)] bg-[#8a84a448] rounded-lg"
+                >
+                  <img src="assets/images/icon-upload.svg" alt="upload" />
+                </div>
+                <input
+                  type="file"
+                  id="fileInput"
+                  accept="image/*"
+                  class="opacity-0 relative bottom-5 cursor-pointer w-full"
+                />
+                <p class="text-[hsl(252,6%,83%)]">
+                  Drag and drop or click to upload
+                </p>
+              </div>
+              <p class="text-[hsl(252,6%,83%)] text-sm mt-2 flex">
+                <img
+                  class="mr-2 w-4"
+                  src="assets/images/icon-info.svg"
+                  alt="icon-info"
+                />
+                Upload your photo (JPG or PNG, max size: 500KB).
+              </p>
+              <div class="mt-3">
+                <label for="fullname" class="text-white mt-3">Full Name</label
+                ><br />
+                <input
+                  class="w-full mt-2 mb-3 h-[50px] rounded-lg border-[1px] bg-[#8a84a448] hover:bg-[#8a84a463] border-[hsl(245,15%,58%)]
+                        pl-4 text-white
+                  "
+                  type="text"
+                  name="fullname"
+                /><br />
+                <label class="text-white" for="emailaddress"
+                  >Email Address</label
+                ><br />
+                <input
+                  class="pl-4 text-white w-full mt-2 mb-3 h-[50px] rounded-lg bg-[#8a84a448] hover:bg-[#8a84a463] border-[hsl(245,15%,58%)] border-[1px]"
+                  type="email"
+                  name="emailaddress"
+                  placeholder="example@email.com"
+                /><br />
+                <p class="text-[hsl(7,88%,67%)] text-sm  mb-4  hidden items-center">
+                  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="none" viewBox="0 0 16 16">
+                  <path stroke="hsl(7, 71%, 60%)" stroke-linecap="round" stroke-linejoin="round"
+                    d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+                  <path fill="hsl(7, 71%, 60%)" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                  <path stroke="hsl(7, 71%, 60%)" stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.004 10.462V7.596M8 5.569v-.042" />
+                </svg>
+                  Please enter a valid email address
+                </p>
+
+                <label class="text-white" for="githubusername"
+                  >GitHub Username</label
+                ><br />
+                <input
+                  class="pl-4 text-white w-full mt-2 h-[50px] rounded-lg bg-[#8a84a448] hover:bg-[#8a84a463] border-[hsl(245,15%,58%)] border-[1px]"
+                  type="email"
+                  name="githubusername"
+                  placeholder="@yourusername"
+                /><br />
+                <button class="font-[800] text-[20px] text-[hsl(248,70%,10%)] w-full mt-6 bg-[hsl(7,88%,67%)] hover:bg-[hsl(7,71%,60%)] h-[50px] rounded-lg">
+                  Generate My Ticket
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

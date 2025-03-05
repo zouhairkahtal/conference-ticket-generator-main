@@ -1,0 +1,85 @@
+@import url(/style/style.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-neutral-0: hsl(0, 0%, 100%);
+    --color-neutral-300: hsl(252, 6%, 83%);
+    --color-neutral-500: hsl(245, 15%, 58%);
+    --color-neutral-700: hsl(245, 19%, 35%);
+    --color-neutral-900: hsl(248, 70%, 10%);
+    --color-orange-500: hsl(7, 88%, 67%);
+    --color-orange-700: hsl(7, 71%, 60%);
+    --color-gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+   --color-flow:hsla(252, 6%, 83%, 0.114);
+}
+html{
+    font-size: 65.2%;
+}
+body{
+    width: 100%;
+    height: auto;
+    font-family: "Inconsolata", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+   background-image: url(/assets/images/background-desktop.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+font-size: 1.8rem;
+
+}
+
+.flexing{
+    display: flex ;
+    flex-direction: column;
+   gap: 1rem;
+}
+.height{
+    height: 100vh;
+
+}
+.max-width{
+    max-width: 42rem;
+}
+.design-1{
+position: absolute;
+left: 0;
+bottom: 0;
+z-index: -1;
+width: 55rem;
+
+}
+.design-2{
+position: absolute;
+    right: 0;
+    top: 5rem;
+    z-index: -1;
+}
+.design-3{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(80%,90%);
+    z-index: -1;
+
+}
+.design-4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 80rem;
+    
+}
+.sizing{
+
+    height: 2rem;
+}

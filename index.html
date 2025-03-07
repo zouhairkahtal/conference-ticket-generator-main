@@ -23,7 +23,7 @@
   </head>
   <body style="font-family: 'Inconsolata', monospace">
     <div
-      class=" w-full h-screen bg-[url('./assets/images/background-desktop.png')] bg-no-repeat bg-center bg-cover relative"
+      class="w-full h-screen bg-[url('./assets/images/background-desktop.png')] bg-no-repeat bg-center bg-cover relative"
     >
       <div
         class="bg-[url('./assets/images/pattern-lines.svg')] w-full h-[800px] bg-center"
@@ -40,7 +40,7 @@
       <div
         class="absolute bg-red- left-0 top-0 w-full h-full flex justify-center"
       >
-        <div class="w-full max-w-[1000px]">
+        <div id="ticket" class="w-full max-w-[1000px]">
           <div class="w-full flex flex-col items-center">
             <img
               class="w-[250px] py-10"
@@ -70,7 +70,7 @@
                 </div>
                 <input
                   type="file"
-                  id="fileInput"
+                  id="upload-image"
                   accept="image/*"
                   class="opacity-0 relative bottom-5 cursor-pointer w-full"
                 />
@@ -78,7 +78,7 @@
                   Drag and drop or click to upload
                 </p>
               </div>
-              <p class="text-[hsl(252,6%,83%)] text-sm mt-2 flex">
+              <p id="image-error" class="text-[hsl(252,6%,83%)] text-sm mt-2 flex">
                 <img
                   class="mr-2 w-4"
                   src="assets/images/icon-info.svg"
@@ -90,9 +90,8 @@
                 <label for="fullname" class="text-white mt-3">Full Name</label
                 ><br />
                 <input
-                  class="w-full mt-2 mb-3 h-[50px] rounded-lg border-[1px] bg-[#8a84a448] hover:bg-[#8a84a463] border-[hsl(245,15%,58%)]
-                        pl-4 text-white
-                  "
+                  id="fullname"
+                  class="w-full mt-2 mb-3 h-[50px] rounded-lg border-[1px] bg-[#8a84a448] hover:bg-[#8a84a463] border-[hsl(245,15%,58%)] pl-4 text-white"
                   type="text"
                   name="fullname"
                 /><br />
@@ -100,20 +99,40 @@
                   >Email Address</label
                 ><br />
                 <input
+                  id="emailaddress"
                   class="pl-4 text-white w-full mt-2 mb-3 h-[50px] rounded-lg bg-[#8a84a448] hover:bg-[#8a84a463] border-[hsl(245,15%,58%)] border-[1px]"
                   type="email"
                   name="emailaddress"
                   placeholder="example@email.com"
                 /><br />
-                <p class="text-[hsl(7,88%,67%)] text-sm  mb-4  hidden items-center">
-                  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                  fill="none" viewBox="0 0 16 16">
-                  <path stroke="hsl(7, 71%, 60%)" stroke-linecap="round" stroke-linejoin="round"
-                    d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
-                  <path fill="hsl(7, 71%, 60%)" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
-                  <path stroke="hsl(7, 71%, 60%)" stroke-linecap="round" stroke-linejoin="round"
-                    d="M8.004 10.462V7.596M8 5.569v-.042" />
-                </svg>
+                <p
+                 id="email-error"  class="text-[hsl(7,88%,67%)] text-sm mb-4 hidden items-center"
+                >
+                  <svg
+                    class="mr-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      stroke="hsl(7, 71%, 60%)"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"
+                    />
+                    <path
+                      fill="hsl(7, 71%, 60%)"
+                      d="M8.004 10.462V7.596ZM8 5.57v-.042Z"
+                    />
+                    <path
+                      stroke="hsl(7, 71%, 60%)"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.004 10.462V7.596M8 5.569v-.042"
+                    />
+                  </svg>
                   Please enter a valid email address
                 </p>
 
@@ -122,17 +141,25 @@
                 ><br />
                 <input
                   class="pl-4 text-white w-full mt-2 h-[50px] rounded-lg bg-[#8a84a448] hover:bg-[#8a84a463] border-[hsl(245,15%,58%)] border-[1px]"
-                  type="email"
+                  type="text"
+                  id="githubusername"
                   name="githubusername"
                   placeholder="@yourusername"
                 /><br />
-                <button class="font-[800] text-[20px] text-[hsl(248,70%,10%)] w-full mt-6 bg-[hsl(7,88%,67%)] hover:bg-[hsl(7,71%,60%)] h-[50px] rounded-lg">
-                  Generate My Ticket
-                </button>
               </div>
             </form>
+
+            <div class="w-[450px] mt-10">
+              <button
+                id="btn"
+                class="font-[800] text-[20px] text-[hsl(248,70%,10%)] w-full  bg-[hsl(7,88%,67%)] hover:bg-[hsl(7,71%,60%)] h-[50px] rounded-lg"
+              >
+                Generate My Ticket
+              </button>
+            </div>
           </div>
         </div>
+       
       </div>
     </div>
     <script src="script.js"></script>

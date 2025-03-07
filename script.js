@@ -7,8 +7,9 @@ const btn =document.getElementById('btn')
 const emailError =document.getElementById('email-error')
 const imageError =document.getElementById('image-error')
 const ticket =document.getElementById('ticket')
-
-
+let dateString = "Jan 31, 2025";
+let dateObject = new Date(dateString);
+let monthName = dateObject.toLocaleString('en-US', { month: 'short' });
 let data = []
 
 btn.addEventListener('click',()=>{
@@ -84,11 +85,11 @@ function click(){
             <h1
               class="pb-4 text-white text-[50px] max-w-[700px] leading-[50px] font-[600] text-center"
             >
-              Congrats, -Full Name-! Your ticket is ready.
+              Congrats, <span class="bg-gradient-to-r from-[hsl(7,88%,67%)] to-[#fff] bg-clip-text text-transparent">${data[data.length-1].fullName}!</span> Your ticket is ready.
             </h1>
             <p class="text-xl max-w-[500px] text-center text-[hsl(252,6%,83%)]">
               We've emailed your ticket to
-              - Email Address -
+                <span class="text-[hsl(7,88%,67%)]">${data[data.length-1].email}!</span>
               and will send updates in the run up to the event.
             </p>
           </div>
@@ -102,16 +103,16 @@ function click(){
                 alt="logo-full"
               />
               <p class="text-sm mt-2 ml-14 text-[hsl(252,6%,83%)]">
-                Jan 31, 2025 / Austin, TX
+                ${monthName} ${dateObject.getDate()}, ${dateObject.getFullYear()} / Austin, TX
               </p>
             </div>
             <div class="flex relative top-32 right-40">
-              <img class="w-16 mr-4 rounded-lg" src="assets/images/image-avatar.jpg" alt="Avatar" />
+              <img class="w-16 mr-4 rounded-lg" src="${data[data.length-1].image}" alt="Avatar" />
               <div>
-                <p style="text-transform: capitalize" class="text-[20px] text-white">full name</p>
+                <p style="text-transform: capitalize" class="text-[20px] text-white">${data[data.length-1].fullName}</p>
                 <div class="flex">
                   <img class="mr-2"  src="assets/images/icon-github.svg" alt="icon-github">
-                  <p class="text-[hsl(252,6%,83%)]">@-githup name-</p>
+                  <p class="text-[hsl(252,6%,83%)]"><a target="_blank" href="https://github.com/${data[data.length-1].githubUsername}">@${data[data.length-1].githubUsername}</a></p>
                 </div>
               </div>
             </div>
@@ -123,6 +124,6 @@ function click(){
           </div>    
     `
    }
-//    console.log(data)
+   console.log(data)
 }
 
